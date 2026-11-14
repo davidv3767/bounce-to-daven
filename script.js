@@ -54,7 +54,7 @@ function upgradeBallColor(ballNum) {
     if (ball[0] != "black" && bounces >= upgradeCost) {
         bounces -= upgradeCost;
         ball[0] = newColor;
-        balls[ballNum[2]] = balls[ballNum[2]] * multiplier;
+        ball[2] = ball[2] * multiplier;
     }
 }
 
@@ -91,6 +91,8 @@ function upgradeBallSize(ballNum) {
     if (ball[1] != "3XL" && bounces >= upgradeCost) {
         bounces -= upgradeCost;
         ball[1] = newSize;
-        balls[ballNum[2]] = balls[ballNum[2]] * multiplier;
+        ball[2] = ball[2] * multiplier;
     }
 }
+
+setInterval(addBounces, 1000);
