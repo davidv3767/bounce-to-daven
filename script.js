@@ -16,6 +16,8 @@ function addBall() {
         balls.push(["red", "XS", 1]);
         newBallCost = Math.floor((newBallCost + 10) * 1.25);
     }
+    document.getElementById("bounces").innerText = bounces;
+    document.getElementById("balls").innerText = balls.length;
 }
 
 function upgradeBallColor() {
@@ -63,6 +65,8 @@ function upgradeBallColor() {
         bounces -= upgradeCost;
         ball[0] = newColor;
         ball[2] = ball[2] * multiplier;
+        document.getElementById("bounces").innerText = bounces;
+        document.getElementById("balls").innerText = balls.length;
     }
 }
 
@@ -107,7 +111,10 @@ function upgradeBallSize() {
         bounces -= upgradeCost;
         ball[1] = newSize;
         ball[2] = ball[2] * multiplier;
+        document.getElementById("bounces").innerText = bounces;
+        document.getElementById("balls").innerText = balls.length;
     }
 }
 
+addBounces();
 setInterval(addBounces, 1000);
