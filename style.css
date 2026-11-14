@@ -1,5 +1,41 @@
 body {
-    background-color: #b5651d;
-    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     text-align: center;
+    background-color: #b5651d;
+    gap: 10px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.btn-container {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.btn {
+    display:inline-block;
+    background-color: #A59C8E;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3)
+}
+
+.btn:hover {
+    background-color: #00c4b8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4)
+}
+
+.math-hub-btn:active {
+    transform: translateY(1px);
 }

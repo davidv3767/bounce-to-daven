@@ -4,9 +4,10 @@ let balls = [["red", "XS", 1]];
 
 function addBounces() {
     for (let ball of balls) {
-        bounces += ball[2];
+        bounces += Math.floor(ball[2]);
     }
     document.getElementById("bounces").innerText = bounces;
+    document.getElementById("balls").innerText = balls.size();
 }
 
 function addBall() {
