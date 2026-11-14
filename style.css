@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     text-align: center;
     background-color: #b5651d;
@@ -13,11 +13,11 @@ body {
 
 .btn-container {
     text-align: center;
-    margin: 25px 0;
+    margin: 15px 0;
 }
 
 .btn {
-    display:inline-block;
+    display: inline-block;
     background-color: #A59C8E;
     color: white;
     font-family: sans-serif;
@@ -27,15 +27,57 @@ body {
     text-decoration: none;
     border-radius: 25px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3)
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
     background-color: #00c4b8;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4)
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.math-hub-btn:active {
-    transform: translateY(1px);
+.ball-animation {
+    display: flex;
+    border-bottom: 15px solid rgb(90, 60, 30);
+    border-radius: 10px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.ball-animation li {
+    width: 40px;
+    height: 40px;
+    list-style: none;
+    background-color: red;
+    margin: auto 20px;
+    border-radius: 50%;
+    animation: bouncing 1s linear infinite alternate-reverse;
+}
+
+@keyframes bouncing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.ball-animation li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.ball-animation li:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.ball-animation li:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.ball-animation li:nth-child(5) {
+    animation-delay: 0.8s;
 }
