@@ -7,18 +7,25 @@ function addBounces() {
         bounces += Math.floor(ball[2]);
     }
     document.getElementById("bounces").innerText = bounces;
-    document.getElementById("balls").innerText = balls.size();
+    document.getElementById("balls").innerText = balls.length;
 }
 
 function addBall() {
-    if (newBallCost <= bounces) {
+    if (newBallCost <= bounces && balls.length < 10) {
         bounces -= newBallCost;
         balls.push(["red", "XS", 1]);
-        newBallCost = (newBallCost + 10) * 1.25;
+        newBallCost = Math.floor((newBallCost + 10) * 1.25);
     }
 }
 
 function upgradeBallColor(ballNum) {
+    let input = prompt(`Enter ball number to upgrade color (1 to ${balls.length}):`);
+    if (input === null) return; // Cancelled
+    let ballNum = parseInt(input) - 1;
+    if (isNaN(ballNum) || ballNum < 0 || ballNum >= balls.length) {
+        alert("Invalid ball number!");
+        return;
+    }
     let upgradeCost;
     let multiplier;
     let newColor;
@@ -60,6 +67,13 @@ function upgradeBallColor(ballNum) {
 }
 
 function upgradeBallSize(ballNum) {
+    let input = prompt(`Enter ball number to upgrade size (1 to ${balls.length}):`);
+    if (input === null) return; 
+    let ballNum = parseInt(input) - 1; // Convert to 0-indexed array position
+    if (isNaN(ballNum) || ballNum < 0 || ballNum >= balls.length) {
+        alert("Invalid ball number!");
+        return;
+    }
     let upgradeCost;
     let multiplier;
     let newSize;
