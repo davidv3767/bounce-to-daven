@@ -18,7 +18,7 @@ function addBall() {
     }
 }
 
-function upgradeBallColor(ballNum) {
+function upgradeBallColor() {
     let input = prompt(`Enter ball number to upgrade color (1 to ${balls.length}):`);
     if (input === null) return; // Cancelled
     let ballNum = parseInt(input) - 1;
@@ -66,7 +66,7 @@ function upgradeBallColor(ballNum) {
     }
 }
 
-function upgradeBallSize(ballNum) {
+function upgradeBallSize() {
     let input = prompt(`Enter ball number to upgrade size (1 to ${balls.length}):`);
     if (input === null) return; 
     let ballNum = parseInt(input) - 1; // Convert to 0-indexed array position
