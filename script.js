@@ -4,7 +4,9 @@ let balls = [["red", "XS", 1]];
 let numberOfBouncfinities = 0;
 let βP = 0;
 let βPperβ = 1;
-
+let βPupgradecost = [1, 3, 5];
+let βPbounceGain = 1;
+let βPbounceSpeed = 1;
 const sizeMap = {
     "XS": "25px",
     "S": "32px",
@@ -18,7 +20,7 @@ const container = document.getElementById("ball-display");
 
 function addBounces() {
     for (let ball of balls) {
-        bounces += Math.floor(ball[2]);
+        bounces += Math.floor(ball[2] * βPbounceGain);
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
@@ -142,6 +144,19 @@ function checkForBouncfinity() {
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
         βP += βPperβ
+    }
+}
+
+function βPupgrade(upgradeNum) {
+    if (upgradeNum == 0 && βPupgradecost[0] <= βP) {
+        βPbounceGain += 0.1;
+        βPupgradecost[0] = (βPupgradecost[0] * 3) - 1;
+    } else if (upgradeNum == 1 && βPupgradecost[1] <= βP) {
+        βPbounceSpeed += 0.1;
+        βPupgradecost[1] = (βPupgradecost[1] * 3) - 1;
+    } else if (upgradeNum == 2 && βPupgradecost[2] <= βP) {
+        βPperβ += 1;
+        βPupgradecost[2] = (βPupgradecost[2] * 3) - 1;
     }
 }
 
