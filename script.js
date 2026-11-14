@@ -80,27 +80,27 @@ function upgradeBallSize(ballNum) {
     let ball = balls[ballNum];
     if (ball[1] == "XS") {
         upgradeCost = 100000;
-        multipler = 1.5;
+        multiplier = 1.5;
         newSize = "S";
     } else if (ball[1] == "S") {
         upgradeCost = 300000;
-        multipler = 2;
+        multiplier = 2;
         newSize = "M";
     } else if (ball[1] == "M") {
         upgradeCost = 900000;
-        multipler = 2.5;
+        multiplier = 2.5;
         newSize = "L";
     } else if (ball[1] == "L") {
         upgradeCost = 2700000;
-        multipler = 3;
+        multiplier = 3;
         newSize = "XL";
     } else if (ball[1] == "XL") {
         upgradeCost = 8100000;
-        multipler = 4;
+        multiplier = 4;
         newSize = "2XL";
     } else if (ball[1] == "2XL") {
         upgradeCost = 24300000;
-        multipler = 5;
+        multiplier = 5;
         newSize = "3XL";
     }
     if (ball[1] != "3XL" && bounces >= upgradeCost) {
