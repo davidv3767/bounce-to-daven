@@ -2,6 +2,9 @@ let bounces = 0;
 let newBallCost = 10;
 let balls = [["red", "XS", 1]];
 let numberOfBouncfinities = 0;
+let βP = 0;
+let βPperβ = 1;
+
 const sizeMap = {
     "XS": "25px",
     "S": "32px",
@@ -138,6 +141,7 @@ function checkForBouncfinity() {
         newBallCost = 10;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
+        βP += βPperβ
     }
 }
 
