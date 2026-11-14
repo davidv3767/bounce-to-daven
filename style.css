@@ -5,7 +5,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    text-align: center;
+    text-align: flex-start;
     background-color: #b5651d;
     gap: 10px;
     font-family: "Times New Roman", Times, serif;
