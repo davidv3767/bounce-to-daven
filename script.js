@@ -1,6 +1,17 @@
 let bounces = 0;
 let newBallCost = 10;
 let balls = [["red", "XS", 1]];
+let numberOfBouncfinities = 0;
+const sizeMap = {
+    "XS": "25px",
+    "S": "32px",
+    "M": "40px",
+    "L": "48px",
+    "XL": "56px",
+    "2XL": "64px",
+    "3XL": "72px"
+};
+const container = document.getElementById("ball-display");
 
 function addBounces() {
     for (let ball of balls) {
@@ -18,6 +29,7 @@ function addBall() {
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
+    renderBalls();
 }
 
 function upgradeBallColor() {
@@ -67,6 +79,7 @@ function upgradeBallColor() {
         ball[2] = ball[2] * multiplier;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
+        renderBalls();
     }
 }
 
@@ -113,8 +126,34 @@ function upgradeBallSize() {
         ball[2] = ball[2] * multiplier;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
+        renderBalls();
     }
 }
 
+function checkForBouncfinity() {
+    if (bounces >= 2 ** 37) {
+        numberOfBouncfinities++;
+        bounces = 0;
+        balls = [["red", "XS", 1]];
+        newBallCost = 10;
+        document.getElementById("bounces").innerText = bounces;
+        document.getElementById("balls").innerText = balls.length;
+    }
+}
+
+function renderBalls() {
+    const container = document.getElementById("ball-display");
+    container.innerHTML = "";
+    balls.forEach((ball, index) => {
+        const li = document.createElement("li");
+        li.style.backgroundColor = ball[0];
+        li.style.width = sizeMap[ball[1]];
+        li.style.height = sizeMap[ball[1]];
+        li.style.animationDelay = `${index * 0.2}s`;
+        container.appendChild(li);
+    });
+}
+
 addBounces();
+renderBalls();
 setInterval(addBounces, 1000);
