@@ -7,6 +7,10 @@ let βPperβ = 1;
 let βPupgradecost = [1, 3, 5];
 let βPbounceGain = 1;
 let βPbounceSpeed = 1;
+let βPchallenges = ["NS", "NS", "NS"]
+let βPchallenge1 = 1;
+let βPchallenge2 = false;
+let βPchallenge3 = false;
 const sizeMap = {
     "XS": "25px",
     "S": "32px",
@@ -174,9 +178,20 @@ function renderBalls() {
 }
 
 function doβchallenge() {
-    
+    if (βPchallenges[0] == "NS" && numberOfBouncfinities > 0) {
+        βPchallenge1 = 2;
+        βPchallenges[0] = "IP";
+    } else if (βPchallenges[1] == "NS" && βPchallenges[0] == "F") {
+        // Not finished working on
+        βPchallenge2 = true;
+        βPchallenges[1] = "IP";
+    } else if (βPchallenges[2] == "NS" && βPchallenges[1] == "F") {
+        // Not finished working on
+        βPchallenge3 = true;
+        βPchallenges[2] = "IP";
+    }
 }
 
 addBounces();
 renderBalls();
-setInterval(addBounces, 1000);
+setInterval(addBounces, 1000 * βPchallenge1);
