@@ -193,6 +193,7 @@ function upgradeBallSize() {
 }
 
 function checkForBouncfinity() {
+    breakBouncfinity();
     if (bounces >= 2 ** 37 && !brokenBouncfinity) {
         numberOfBouncfinities++;
         bounces = 0;
@@ -200,7 +201,14 @@ function checkForBouncfinity() {
         newBallCost = 10;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
-        βP += βPperβ
+        βP += βPperβ;
+        if (βPchallenge[0] == "IP") {
+            βPchallenge[0] = "F";
+        } else if (βPchallenge[1] == "IP") {
+            βPchallenge[1] = "F";
+        } else if (βPchallenge[2] == "IP") {
+            βPchallenge[2] = "F";
+        }
     } else if (bounces >= 2 ** 37 && brokenBouncfinity) {
         numberOfBouncfinities++;
         let x = Math.floor(Math.log2(bounces) - 37);
@@ -212,7 +220,14 @@ function checkForBouncfinity() {
         newBallCost = 10;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
-        βP += (βPperβ * (2**x))
+        βP += (βPperβ * (2**x));
+        if (βPchallenge[0] == "IP") {
+            βPchallenge[0] = "F";
+        } else if (βPchallenge[1] == "IP") {
+            βPchallenge[1] = "F";
+        } else if (βPchallenge[2] == "IP") {
+            βPchallenge[2] = "F";
+        }
     }
     updateUI();
     saveGame();
@@ -263,7 +278,7 @@ function doβchallenge() {
 }
 
 function breakBouncfinity() {
-    if (βP >= 1000000) {
+    if (βP >= 1000000 && βPchallenges = ["F", "F", "F"]) {
         maxBalls = 12;
         breakBouncfinity = true;
     }
@@ -273,4 +288,4 @@ loadGame();
 updateUI();
 renderBalls();
 addBounces();
-setInterval(addBounces, 1000 * βPchallenge1);
+setInterval(addBounces, 1000 * βPchallenge1 / βPbounceSpeed);
