@@ -237,7 +237,7 @@ function upgradeBallSize() {
         if (newSize == "L" && !achievements[6]) {
             achievements[6] = true;
             achievements[numberOfAchievements]++;
-        } else if (newSize == "L" && !achievements[7]) {
+        } else if (newSize == "XL" && !achievements[7]) {
             achievements[7] = true;
             achievements[numberOfAchievements]++;
         } else if (newSize == "3XL" && !achievements[8]) {
@@ -401,10 +401,9 @@ function updateAchievements() {
     if (achievements[10]) {
         document.getElementById("achievement11").innerText = "✓";
     }
-    ocument.getElementById("achievementsDone").innerText = achievements[numberOfAchievements]
+    document.getElementById("achievementsDone").innerText = achievements[numberOfAchievements]
     updateUI();
     renderBalls();
-    renderDavenBalls();
     saveGame();
 }
 
