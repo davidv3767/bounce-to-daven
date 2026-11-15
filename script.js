@@ -397,6 +397,16 @@ function updateAchievements() {
     saveGame();
 }
 
+function resetProgress() {
+    let input = prompt(`Enter "I understand" if you agree to reset your progress:`);
+    if (input == "I understand") {
+        localStorage.clear();
+        location.reload();
+    } else {
+        return;
+    }
+}
+
 loadGame();
 updateUI();
 renderBalls();
