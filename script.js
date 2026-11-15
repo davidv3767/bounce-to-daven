@@ -251,6 +251,7 @@ function βPupgrade(upgradeNum) {
 
 function renderBalls() {
     const container = document.getElementById("ball-display");
+    if (!container) return;
     container.innerHTML = "";
     balls.forEach((ball, index) => {
         const li = document.createElement("li");
