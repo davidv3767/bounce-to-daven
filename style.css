@@ -11,6 +11,10 @@ body {
     font-family: "Times New Roman", Times, serif;
 }
 
+p2 {
+    gap: 5px
+}
+
 .btn-container {
     text-align: center;
     margin: 15px 0;
@@ -160,6 +164,16 @@ body {
     height: 55px !important;
     background-color: transparent !important;
     background-image: url('silverdaven.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.goldendaven-ball {
+    width: 55px !important;
+    height: 55px !important;
+    background-color: transparent !important;
+    background-image: url('goldendaven.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;

@@ -15,6 +15,8 @@ let maxBalls = 10;
 let brokenBouncfinity = false;
 let davenBalls = [];
 let davenBallCost = 100;
+let achievements = [];
+let achievement1done = false;
 const maxDavenBalls = 10;
 const sizeMap = {
     "XS": "25px",
@@ -66,6 +68,8 @@ function loadGame() {
     if (localStorage.getItem('brokenBouncfinity') !== null) brokenBouncfinity = JSON.parse(localStorage.getItem('brokenBouncfinity'));
     if (localStorage.getItem('davenBalls') !== null) davenBalls = JSON.parse(localStorage.getItem('davenBalls'));
     if (localStorage.getItem('davenBallCost') !== null) davenBallCost = parseInt(localStorage.getItem('davenBallCost'));
+    if (localStorage.getItem('achievements') !== null) achievements = JSON.parse(localStorage.getItem('achievements'));
+    if (localStorage.getItem('achievement1done') !== null) achievement1done = JSON.parse(localStorage.getItem('achievement1done'));
 }
 
 function saveGame() {
@@ -86,6 +90,8 @@ function saveGame() {
     localStorage.setItem('brokenBouncfinity', JSON.stringify(brokenBouncfinity));
     localStorage.setItem('davenBalls', JSON.stringify(davenBalls));
     localStorage.setItem('maxDavenBalls', maxDavenBalls);
+    localStorage.setItem('achievements', JSON.stringify(achievements));
+    localStorage.setItem('achievement1done', JSON.stringify(achievement1done));
 }
 
 function updateUI() {
@@ -143,6 +149,9 @@ function upgradeBallColor() {
     if (ball[0] != "black" && bounces >= upgradeCost && (!βPchallenge2 || !(ball[0] == "purple" || ball[0] == "white"))) {
         bounces -= upgradeCost;
         ball[0] = newColor;
+        if (newColor == "yellow" && !achievement1done) {
+            achievement1done = true;
+        }
         ball[2] = ball[2] * multiplier;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
@@ -307,6 +316,16 @@ function buyDavenBall() {
         renderDavenBalls();
         saveGame();
     }
+}
+
+function updateAchievements() {
+    if (achievement1) {
+        document.getElementById("achievement1").innerText = "✓";
+    }
+    updateUI();
+    renderBalls();
+    renderDavenBalls();
+    saveGame();
 }
 
 loadGame();
