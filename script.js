@@ -43,14 +43,10 @@ function addBounces() {
     let all3XLs = true;
     for (let ball of balls) {
         bounces += Math.floor(ball[2] * βPbounceGain);
-        if (ball[0] == "black" && allBlack) {
-            allBlack = true;
-        } else {
+        if (ball[0] !== "black") {
             allBlack = false;
         }
-        if (ball[1] == "3XL" && all3XLs) {
-            all3XLs = true;
-        } else {
+        if (daven[1] !== "3XL") {
             all3XLs = false;
         }
     }
@@ -65,6 +61,9 @@ function addBounces() {
     if (all3XLs && allBlack && balls.length >= 10) {
         achievements[9] = true;
         achievements[numberOfAchievements]++;
+    }
+    if (βPchallenge3) {
+        bounces = bounces * 0.995;
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
@@ -428,9 +427,7 @@ function passiveβP() {
     let allRoyals = true;
     for (let daven of davenBalls) {
         βP += Math.floor(daven[1]);
-        if (daven[0] == "royal" && !allRoyals) {
-            allRoyals = true;
-        } else {
+        if (daven[0] !== "royal") {
             allRoyals = false;
         }
     }
@@ -480,15 +477,15 @@ function upgradeDavenRank() {
         βP -= upgradeCost;
         daven[0] = newRank;
         daven[1] = daven[1] * multipler;
-        if (newSize == "gold" && !achievements[23]) {
+        if (newRank == "gold" && !achievements[23]) {
             achievements[23] = true;
             achievements[numberOfAchievements]++;
         }
-        if (newSize == "shiny" && !achievements[24]) {
+        if (newRank == "shiny" && !achievements[24]) {
             achievements[24] = true;
             achievements[numberOfAchievements]++;
         }
-        if (newSize == "royal" && !achievements[25]) {
+        if (newRank == "royal" && !achievements[25]) {
             achievements[25] = true;
             achievements[numberOfAchievements]++;
         }
