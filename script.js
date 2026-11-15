@@ -424,6 +424,21 @@ function buyDavenBall() {
     }
 }
 
+function passiveβP() {
+    let allRoyals = true;
+    for (let daven of davenBalls) {
+        βP += Math.floor(daven[1]);
+        if (daven[0] == "royal" && !allRoyals) {
+            allRoyals = true;
+        } else {
+            allRoyals = false;
+        }
+    }
+    if (allRoyals && davenBalls.length >= 10 && !achievements[26]) {
+        achievements[26] = true;
+    }
+}
+
 function upgradeDavenRank() {
     let input = prompt(`Enter ball number to upgrade color (1 to ${davenBalls.length}):`);
     if (input === null) return;
@@ -534,3 +549,4 @@ renderBalls();
 renderDavenBalls();
 addBounces();
 setInterval(addBounces, 1000 * βPchallenge1 / βPbounceSpeed);
+setInterval(passiveβP, 1000)
