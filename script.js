@@ -547,7 +547,11 @@ function updateAchievements() {
 }
 
 function resetProgress() {
-    localStorage.clear();
+    try {
+        localStorage.clear();
+    } catch (e) {
+        window.localStorage.clear();
+    }
     alert('Progress is Reset!');
     location.reload();
 }
