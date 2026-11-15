@@ -41,6 +41,49 @@ function addBall() {
     renderBalls();
 }
 
+function loadGame() {
+    if (localStorage.getItem('bounces') !== null) bounces = parseInt(localStorage.getItem('bounces'));
+    if (localStorage.getItem('newBallCost') !== null) newBallCost = parseInt(localStorage.getItem('newBallCost'));
+    if (localStorage.getItem('balls') !== null) balls = JSON.parse(localStorage.getItem('balls'));
+    if (localStorage.getItem('numberOfBouncfinities') !== null) numberOfBouncfinities = parseInt(localStorage.getItem('numberOfBouncfinities'));
+    if (localStorage.getItem('βP') !== null) βP = parseInt(localStorage.getItem('βP'));
+    if (localStorage.getItem('βPperβ') !== null) βPperβ = parseInt(localStorage.getItem('βPperβ'));
+    if (localStorage.getItem('βPupgradecost') !== null) βPupgradecost = JSON.parse(localStorage.getItem('βPupgradecost'));
+    if (localStorage.getItem('βPbounceGain') !== null) βPbounceGain = parseFloat(localStorage.getItem('βPbounceGain'));
+    if (localStorage.getItem('βPbounceSpeed') !== null) βPbounceSpeed = parseFloat(localStorage.getItem('βPbounceSpeed'));
+    if (localStorage.getItem('βPchallenges') !== null) βPchallenges = JSON.parse(localStorage.getItem('βPchallenges'));
+    if (localStorage.getItem('βPchallenge1') !== null) βPchallenge1 = parseInt(localStorage.getItem('βPchallenge1'));
+    if (localStorage.getItem('βPchallenge2') !== null) βPchallenge2 = JSON.parse(localStorage.getItem('βPchallenge2'));
+    if (localStorage.getItem('βPchallenge3') !== null) βPchallenge3 = JSON.parse(localStorage.getItem('βPchallenge3'));
+}
+
+function saveGame() {
+    localStorage.setItem('bounces', bounces);
+    localStorage.setItem('newBallCost', newBallCost);
+    localStorage.setItem('balls', JSON.stringify(balls));
+    localStorage.setItem('numberOfBouncfinities', numberOfBouncfinities);
+    localStorage.setItem('βP', βP);
+    localStorage.setItem('βPperβ', βPperβ);
+    localStorage.setItem('βPupgradecost', JSON.stringify(βPupgradecost));
+    localStorage.setItem('βPbounceGain', βPbounceGain);
+    localStorage.setItem('βPbounceSpeed', βPbounceSpeed);
+    localStorage.setItem('βPchallenges', JSON.stringify(βPchallenges));
+    localStorage.setItem('βPchallenge1', βPchallenge1);
+    localStorage.setItem('βPchallenge2', βPchallenge2);
+    localStorage.setItem('βPchallenge3', βPchallenge3);
+}
+
+function updateUI() {
+    const bouncesEl = document.getElementById("bounces");
+    const ballsEl = document.getElementById("balls");
+    const bouncfinitiesEl = document.getElementById("bouncfinities");
+    const betaPEl = document.getElementById("βp");
+    if (bouncesEl) bouncesEl.innerText = bounces;
+    if (ballsEl) ballsEl.innerText = balls.length;
+    if (bouncfinitiesEl) bouncfinitiesEl.innerText = numberOfBouncfinities;
+    if (betaPEl) betaPEl.innerText = βP;
+}
+
 function upgradeBallColor() {
     let input = prompt(`Enter ball number to upgrade color (1 to ${balls.length}):`);
     if (input === null) return; // Cancelled
