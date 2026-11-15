@@ -79,7 +79,7 @@ function updateUI() {
     const bouncesEl = document.getElementById("bounces");
     const ballsEl = document.getElementById("balls");
     const bouncfinitiesEl = document.getElementById("bouncfinities");
-    const betaPEl = document.getElementById("βp");0
+    const betaPEl = document.getElementById("βp");
     if (bouncesEl) bouncesEl.innerText = bounces;
     if (ballsEl) ballsEl.innerText = balls.length;
     if (bouncfinitiesEl) bouncfinitiesEl.innerText = numberOfBouncfinities;
@@ -224,6 +224,7 @@ function renderBalls() {
         li.style.animationDelay = `${index * 0.2}s`;
         container.appendChild(li);
     });
+    saveGame();
 }
 
 function doβchallenge() {
@@ -242,8 +243,8 @@ function doβchallenge() {
     saveGame();
 }
 
-addBounces();
 loadGame();
 updateUI();
 renderBalls();
+addBounces();
 setInterval(addBounces, 1000 * βPchallenge1);
