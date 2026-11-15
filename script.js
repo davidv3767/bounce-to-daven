@@ -461,27 +461,27 @@ function upgradeDavenRank() {
         multipler = 100;
         newRank = "bronze";
     } else  if (daven[0] == "bronze") {
-        upgradeCost = 100000;
+        upgradeCost = 1000;
         multipler = 100;
         newRank = "silver";
     } else if (daven[0] == "silver") {
-        upgradeCost = 25000000;
+        upgradeCost = 25000;
         multipler = 10;
         newRank = "gold";
     } else if (daven[0] == "gold") {
-        upgradeCost = 500000000;
+        upgradeCost = 500000;
         multipler = 100;
         newRank = "cosmic";
     } else if (daven[0] == "cosmic") {
-        upgradeCost = 10000000000;
+        upgradeCost = 10000000;
         multipler = 10;
         newRank = "shiny";
     } else if (daven[0] == "shiny") {
-        upgradeCost = 250000000000;
+        upgradeCost = 250000000;
         multipler = 10;
         newRank = "royal";
     } else if (daven[0] == "royal") {
-        upgradeCost = 5000000000000;
+        upgradeCost = 5000000000;
         multipler = 1000;
         newRank = "emperor";
     }
