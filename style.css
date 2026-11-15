@@ -232,3 +232,14 @@ body {
     background-position: center;
     border-radius: 50%;
 }
+
+
+.emperordaven-ball {
+    width: 55px !important;
+    height: 55px !important;
+    background-color: transparent !important;
+    background-image: url('emperordaven.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}

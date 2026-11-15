@@ -15,8 +15,8 @@ let maxBalls = 10;
 let brokenBouncfinity = false;
 let davenBalls = [];
 let davenBallCost = 100;
-let achievements = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 0];
-const numberOfAchievements = 27;
+let achievements = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 0];
+const numberOfAchievements = 28;
 const maxDavenBalls = 10;
 const sizeMap = {
     "XS": "25px",
@@ -35,6 +35,7 @@ const davenImageMap = {
     "cosmic": "cosmicdaven.png",
     "shiny": "shinydaven.png",
     "royal": "royaldaven.png",
+    "emperor": "royaldaven.png"
 };
 const container = document.getElementById("ball-display");
 
@@ -98,7 +99,12 @@ function loadGame() {
     if (localStorage.getItem('brokenBouncfinity') !== null) brokenBouncfinity = JSON.parse(localStorage.getItem('brokenBouncfinity'));
     if (localStorage.getItem('davenBalls') !== null) davenBalls = JSON.parse(localStorage.getItem('davenBalls'));
     if (localStorage.getItem('davenBallCost') !== null) davenBallCost = parseInt(localStorage.getItem('davenBallCost'));
-    if (localStorage.getItem('achievements') !== null) achievements = JSON.parse(localStorage.getItem('achievements'));
+    if (localStorage.getItem('achievements') !== null) {
+        achievements = JSON.parse(localStorage.getItem('achievements'));
+        while (achievements.length <= numberOfAchievements) {
+            achievements.push(false);
+        }
+    }
 }
 
 function saveGame() {
@@ -471,6 +477,10 @@ function upgradeDavenRank() {
         upgradeCost = 250000000000;
         multipler = 10;
         newRank = "royal";
+    } else if (daven[0] == "royal") {
+        upgradeCost = 5000000000000;
+        multipler = 1000;
+        newRank = "emperor";
     }
     if (βP >= upgradeCost) {
         βP -= upgradeCost;
@@ -486,6 +496,10 @@ function upgradeDavenRank() {
         }
         if (newRank == "royal" && !achievements[25]) {
             achievements[25] = true;
+            achievements[numberOfAchievements]++;
+        }
+        if (newRank == "emperor" && !achievements[27]) {
+            achievements[27] = true;
             achievements[numberOfAchievements]++;
         }
         updateUI();
