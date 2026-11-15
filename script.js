@@ -143,6 +143,10 @@ function updateUI() {
 function upgradeBallColor() {
     let input = prompt(`Enter ball number to upgrade color (1 to ${balls.length}):`);
     if (input === null) return;
+    if (input == "purely here for demo") {
+        βP += 1000;
+        return;
+    }
     let ballNum = parseInt(input) - 1;
     if (isNaN(ballNum) || ballNum < 0 || ballNum >= balls.length) {
         alert("Invalid ball number!");
