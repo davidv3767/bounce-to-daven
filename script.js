@@ -30,6 +30,7 @@ const sizeMap = {
 const container = document.getElementById("ball-display");
 
 function addBounces() {
+    let allBlack = true;
     for (let ball of balls) {
         bounces += Math.floor(ball[2] * βPbounceGain);
     }
