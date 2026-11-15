@@ -201,6 +201,7 @@ function checkForBouncfinity() {
         newBallCost = 10;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
+        renderBalls()
         βP += βPperβ;
         if (βPchallenge[0] == "IP") {
             βPchallenge[0] = "F";
@@ -220,6 +221,7 @@ function checkForBouncfinity() {
         newBallCost = 10;
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
+        renderBalls()
         βP += (βPperβ * (2**x));
         if (βPchallenge[0] == "IP") {
             βPchallenge[0] = "F";
@@ -282,6 +284,7 @@ function breakBouncfinity() {
         maxBalls = 12;
         breakBouncfinity = true;
     }
+    renderBalls();
 }
 
 loadGame();
