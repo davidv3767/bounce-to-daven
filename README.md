@@ -4,4 +4,18 @@
 Created at Haven (haven.hackclub.com), this is an idle game where you gain bounces, upgrade your balls, & get the prestige levels!
 
 ## Stages
-###
+
+### 1. Reaching Bouncfinity
+Through upgrading your balls (color from red --> black && size from S --> 3XL), you gain multipliers, allowing you to exponentially gain bounces. Once you get 2^37 bounces (about 137.44 billion), you can bouncfinate!
+
+### 2. Early Bouncfinity
+On the bouncfinity (1st prestige) tab, you can use your βP to increase bounce gain, bounce speed, or more βP gain. You may also do one of three challenges. The first challenge reduces your speed by half, the second limits your bouncy balls to a max of purple, 2XL ones, and the third steals 0.5% of your bounces every second! 
+
+### 3. Late Bouncfinity
+After all 3 challenges are beat, BOUNCFINITY IS BROKEN! You can gain more bouncfinities and more βP by waiting past 137.44 billion to bouncificate! This will fuel you towards the next sub-prestige level.
+
+### 4. Daven Balls
+Welcome the Daven bouncy balls! Inspired by the Haven mascot, there are 7 Daven ball types (normal, bronze, silver, gold, cosmic, shiny, royalty) bought with βP that passively generate more βP for you!
+
+## In The Future
+We have thoughts about continuing this project on Coral (coral.hackclub.com) where we add more content & maybe try to build an AI to speedrun our game!
