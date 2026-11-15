@@ -15,8 +15,7 @@ let maxBalls = 10;
 let brokenBouncfinity = false;
 let davenBalls = [];
 let davenBallCost = 100;
-let achievements = [];
-let achievement1done = false;
+let achievements = [false, false, false, false, false, false, false, false, false, false, false, 0];
 const maxDavenBalls = 10;
 const sizeMap = {
     "XS": "25px",
@@ -69,7 +68,6 @@ function loadGame() {
     if (localStorage.getItem('davenBalls') !== null) davenBalls = JSON.parse(localStorage.getItem('davenBalls'));
     if (localStorage.getItem('davenBallCost') !== null) davenBallCost = parseInt(localStorage.getItem('davenBallCost'));
     if (localStorage.getItem('achievements') !== null) achievements = JSON.parse(localStorage.getItem('achievements'));
-    if (localStorage.getItem('achievement1done') !== null) achievement1done = JSON.parse(localStorage.getItem('achievement1done'));
 }
 
 function saveGame() {
@@ -91,7 +89,6 @@ function saveGame() {
     localStorage.setItem('davenBalls', JSON.stringify(davenBalls));
     localStorage.setItem('maxDavenBalls', maxDavenBalls);
     localStorage.setItem('achievements', JSON.stringify(achievements));
-    localStorage.setItem('achievement1done', JSON.stringify(achievement1done));
 }
 
 function updateUI() {
@@ -107,7 +104,7 @@ function updateUI() {
 
 function upgradeBallColor() {
     let input = prompt(`Enter ball number to upgrade color (1 to ${balls.length}):`);
-    if (input === null) return; // Cancelled
+    if (input === null) return;
     let ballNum = parseInt(input) - 1;
     if (isNaN(ballNum) || ballNum < 0 || ballNum >= balls.length) {
         alert("Invalid ball number!");
@@ -149,8 +146,14 @@ function upgradeBallColor() {
     if (ball[0] != "black" && bounces >= upgradeCost && (!βPchallenge2 || !(ball[0] == "purple" || ball[0] == "white"))) {
         bounces -= upgradeCost;
         ball[0] = newColor;
-        if (newColor == "yellow" && !achievement1done) {
-            achievement1done = true;
+        if (newColor == "yellow" && !achievements[0]) {
+            achievements[0] = true;
+        } else if  (newColor == "blue" && !achievements[2]) {
+            achievements[2] = true;
+        } else if  (newColor == "white" && !achievements[3]) {
+            achievements[3] = true;
+        } else if  (newColor == "black" && !achievements[4]) {
+           achievements[4] = true;
         }
         ball[2] = ball[2] * multiplier;
         document.getElementById("bounces").innerText = bounces;
@@ -319,8 +322,28 @@ function buyDavenBall() {
 }
 
 function updateAchievements() {
-    if (achievement1) {
+    if (achievements[0]) {
         document.getElementById("achievement1").innerText = "✓";
+    } else if (achievements[1]) {
+        document.getElementById("achievement2").innerText = "✓";
+    } else if (achievements[2]) {
+        document.getElementById("achievement3").innerText = "✓";
+    } else if (achievements[3]) {
+        document.getElementById("achievement4").innerText = "✓";
+    } else if (achievements[4]) {
+        document.getElementById("achievement5").innerText = "✓";
+    } else if (achievements[5]) {
+        document.getElementById("achievement6").innerText = "✓";
+    } else if (achievements[6]) {
+        document.getElementById("achievement7").innerText = "✓";
+    } else if (achievements[7]) {
+        document.getElementById("achievement8").innerText = "✓";
+    } else if (achievements[8]) {
+        document.getElementById("achievement9").innerText = "✓";
+    } else if (achievements[9]) {
+        document.getElementById("achievement10").innerText = "✓";
+    } else if (achievements[10]) {
+        document.getElementById("achievement11").innerText = "✓";
     }
     updateUI();
     renderBalls();
