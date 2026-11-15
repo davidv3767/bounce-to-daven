@@ -26,3 +26,4 @@ Due to the limited amount of time spent on this project, there may be bugs we ha
 ### Current Known Bugs:
 Reset button has no effect
 Going to Action Music tab sometimes causes all of them to play at once
+Achievements don't sync properly
