@@ -46,7 +46,7 @@ function addBounces() {
         if (ball[0] !== "black") {
             allBlack = false;
         }
-        if (daven[1] !== "3XL") {
+        if (ball[1] !== "3XL") {
             all3XLs = false;
         }
     }
