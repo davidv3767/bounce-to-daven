@@ -208,7 +208,7 @@ function upgradeBallColor() {
 function upgradeBallSize() {
     let input = prompt(`Enter ball number to upgrade size (1 to ${balls.length}):`);
     if (input === null) return; 
-    let ballNum = parseInt(input) - 1; // Convert to 0-indexed array position
+    let ballNum = parseInt(input) - 1; 
     if (isNaN(ballNum) || ballNum < 0 || ballNum >= balls.length) {
         alert("Invalid ball number!");
         return;
@@ -377,7 +377,6 @@ function renderBalls() {
         li.style.animationDelay = `${index * 0.2}s`;
         container.appendChild(li);
     });
-    saveGame();
 }
 
 function doβchallenge() {
@@ -555,4 +554,4 @@ renderBalls();
 renderDavenBalls();
 addBounces();
 setInterval(addBounces, 1000 * βPchallenge1 / βPbounceSpeed);
-setInterval(passiveβP, 1000)
+setInterval(passiveβP, 1000);
