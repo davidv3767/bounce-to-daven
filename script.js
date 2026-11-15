@@ -28,6 +28,7 @@ function addBounces() {
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
+    checkForBouncfinity();
     saveGame();
 }
 
