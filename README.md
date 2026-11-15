@@ -24,6 +24,6 @@ We have thoughts about continuing this project on Coral (coral.hackclub.com) whe
 Due to the limited amount of time spent on this project, there may be bugs we have not provided a solution to. If we plan to work on this in the future, all  known to us will be fixed! 
 
 ### Current Known Bugs:
-Reset button has no effect
-Going to Action Music tab sometimes causes all of them to play at once
-Achievements don't sync properly
+##### Reset button has no effect
+##### Going to Action Music tab sometimes causes all of them to play at once
+##### Achievements don't sync properly
