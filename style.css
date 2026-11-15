@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    Justify-content: top;
     align-items: center;
     min-height: 100vh;
     margin: 0;
@@ -51,6 +51,7 @@ body {
     background-color: red;
     margin: auto 20px;
     border-radius: 50%;
+    box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.3);
     animation: bouncing 1s linear infinite alternate-reverse;
 }
 

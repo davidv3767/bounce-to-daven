@@ -370,27 +370,38 @@ function buyDavenBall() {
 function updateAchievements() {
     if (achievements[0]) {
         document.getElementById("achievement1").innerText = "✓";
-    } else if (achievements[1]) {
+    }
+    if (achievements[1]) {
         document.getElementById("achievement2").innerText = "✓";
-    } else if (achievements[2]) {
+    }
+    if (achievements[2]) {
         document.getElementById("achievement3").innerText = "✓";
-    } else if (achievements[3]) {
+    }
+    if (achievements[3]) {
         document.getElementById("achievement4").innerText = "✓";
-    } else if (achievements[4]) {
+    }
+    if (achievements[4]) {
         document.getElementById("achievement5").innerText = "✓";
-    } else if (achievements[5]) {
+    }
+    if (achievements[5]) {
         document.getElementById("achievement6").innerText = "✓";
-    } else if (achievements[6]) {
+    }
+    if (achievements[6]) {
         document.getElementById("achievement7").innerText = "✓";
-    } else if (achievements[7]) {
+    }
+    if (achievements[7]) {
         document.getElementById("achievement8").innerText = "✓";
-    } else if (achievements[8]) {
+    }
+    if (achievements[8]) {
         document.getElementById("achievement9").innerText = "✓";
-    } else if (achievements[9]) {
+    }
+    if (achievements[9]) {
         document.getElementById("achievement10").innerText = "✓";
-    } else if (achievements[10]) {
+    }
+    if (achievements[10]) {
         document.getElementById("achievement11").innerText = "✓";
     }
+    ocument.getElementById("achievementsDone").innerText = achievements[numberOfAchievements]
     updateUI();
     renderBalls();
     renderDavenBalls();
