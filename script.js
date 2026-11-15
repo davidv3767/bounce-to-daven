@@ -512,15 +512,19 @@ function renderDavenBalls() {
 }
 
 function updateAchievements() {
+    let unlockedCount = 0;
     for (let i = 0; i < numberOfAchievements; i++) {
         const el = document.getElementById(`achievement${i + 1}`);
         if (el && achievements[i]) {
             el.innerText = "✓";
         }
+        if (achievements[i]) {
+            unlockedCount++;
+        }
     }
     const doneEl = document.getElementById("achievementsDone");
     if (doneEl) {
-        doneEl.innerText = achievements[numberOfAchievements];
+        doneEl.innerText = unlockedCount;
     }
     updateUI();
 }
