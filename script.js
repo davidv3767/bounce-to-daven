@@ -311,16 +311,16 @@ function checkForBouncfinity() {
 }
 
 function βPupgrade(upgradeNum) {
-    if (upgradeNum == 0 && βPupgradecost[0] <= βp) {
-        βp -= βPupgradecost[0];
+    if (upgradeNum == 0 && βPupgradecost[0] <= βP) {
+        βP -= βPupgradecost[0];
         βPbounceGain += 0.1;
         βPupgradecost[0] = (βPupgradecost[0] * 3) - 1;
-    } else if (upgradeNum == 1 && βPupgradecost[1] <= βp) {
-        βp -= βPupgradecost[1];
+    } else if (upgradeNum == 1 && βPupgradecost[1] <= βP) {
+        βP -= βPupgradecost[1];
         βPbounceSpeed += 0.1;
         βPupgradecost[1] = (βPupgradecost[1] * 3) - 1;
-    } else if (upgradeNum == 2 && βPupgradecost[2] <= βp) {
-        βp -= βPupgradecost[2];
+    } else if (upgradeNum == 2 && βPupgradecost[2] <= βP) {
+        βP -= βPupgradecost[2];
         βPperβ += 1;
         βPupgradecost[2] = (βPupgradecost[2] * 3) - 1;
     }
@@ -347,11 +347,9 @@ function doβchallenge() {
         βPchallenge1 = 2;
         βPchallenges[0] = "IP";
     } else if (βPchallenges[1] == "NS" && βPchallenges[0] == "F") {
-        // Not finished working on
         βPchallenge2 = true;
         βPchallenges[1] = "IP";
     } else if (βPchallenges[2] == "NS" && βPchallenges[1] == "F") {
-        // Not finished working on
         βPchallenge3 = true;
         βPchallenges[2] = "IP";
     }
@@ -419,6 +417,9 @@ function upgradeDavenRank() {
         βP -= upgradeCost;
         daven[0] = newRank;
         daven[1] = daven[1] * multipler;
+        updateUI();
+        renderDavenBalls();
+        saveGame();
     }
 }
 
@@ -430,7 +431,7 @@ function renderDavenBalls() {
     container.innerHTML = "";
     davenBalls.forEach((daven, index) => {
         const li = document.createElement("li");
-        li.style.backgroundImage = `url('${davenImageMap[daven.rank]}')`;
+        li.style.backgroundImage = `url('${davenImageMap[daven[0]]}')`;
         li.style.backgroundSize = "cover";
         li.style.backgroundPosition = "center";
         li.style.width = "50px";

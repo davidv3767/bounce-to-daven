@@ -16,11 +16,15 @@
             <li><a href="music.html">Bouncy Music</a></li>
         </ul>
     </nav>
-    <h2>Time Played: ---</h2>
-    <h2>Fastest Bouncfinity: ---</h2>
     <h2><a href="achievements1.html">Click to See Achievements (<span id="achievementsDone">-</span>/11)</a></h2>
-    <div class="btn-container">
-        <a class="btn" onclick="resetProgress()">Reset Progress</a>
-    </div>
+    <button id="myButton">Reset Progress</button>
+     <script>
+        const button = document.getElementById('myButton');
+        button.addEventListener('click', function() {
+            alert('Progress is Reset!');
+            button.textContent = "Clicked!";
+        });
+     </script>
+    <h2>Created by David, Cole, & Van</h2>
 </body>
 </html>
