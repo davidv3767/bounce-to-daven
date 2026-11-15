@@ -17,6 +17,9 @@ After all 3 challenges are beat, BOUNCFINITY IS BROKEN! You can gain more bouncf
 ### 4. Daven Balls
 Welcome the Daven bouncy balls! Inspired by the Haven mascot, there are 7 Daven ball types (normal, bronze, silver, gold, cosmic, shiny, royalty, & emperor) bought with βP that passively generate more βP for you!
 
+### 5. Reset
+You can always reset your progress at the stats tab!
+
 ## In The Future
 We have thoughts about continuing this project on Coral (coral.hackclub.com) where we add more content & maybe try to build an AI to speedrun our game!
 
@@ -24,5 +27,5 @@ We have thoughts about continuing this project on Coral (coral.hackclub.com) whe
 Due to the limited amount of time spent on this project, there may be bugs we have not provided a solution to. If we plan to work on this in the future, all  known to us will be fixed! 
 
 ### Current Known Bugs:
-##### 2. Going to Action Music tab sometimes causes all of them to play at once
-##### 3. Achievements don't sync properly
+##### 1. Going to Action Music tab sometimes causes all of them to play at once
+##### 2. Achievements don't sync properly
