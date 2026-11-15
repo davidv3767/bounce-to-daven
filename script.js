@@ -203,12 +203,12 @@ function checkForBouncfinity() {
         document.getElementById("balls").innerText = balls.length;
         renderBalls()
         βP += βPperβ;
-        if (βPchallenge[0] == "IP") {
-            βPchallenge[0] = "F";
-        } else if (βPchallenge[1] == "IP") {
-            βPchallenge[1] = "F";
-        } else if (βPchallenge[2] == "IP") {
-            βPchallenge[2] = "F";
+        if (βPchallenges[0] == "IP") {
+            βPchallenges[0] = "F";
+        } else if (βPchallenges[1] == "IP") {
+            βPchallenges[1] = "F";
+        } else if (βPchallenges[2] == "IP") {
+            βPchallenges[2] = "F";
         }
     } else if (bounces >= 2 ** 37 && brokenBouncfinity) {
         numberOfBouncfinities++;
@@ -223,12 +223,12 @@ function checkForBouncfinity() {
         document.getElementById("balls").innerText = balls.length;
         renderBalls()
         βP += (βPperβ * (2**x));
-        if (βPchallenge[0] == "IP") {
-            βPchallenge[0] = "F";
-        } else if (βPchallenge[1] == "IP") {
-            βPchallenge[1] = "F";
-        } else if (βPchallenge[2] == "IP") {
-            βPchallenge[2] = "F";
+        if (βPchallenges[0] == "IP") {
+            βPchallenges[0] = "F";
+        } else if (βPchallenges[1] == "IP") {
+            βPchallenges[1] = "F";
+        } else if (βPchallenges[2] == "IP") {
+            βPchallenges[2] = "F";
         }
     }
     updateUI();
@@ -280,7 +280,7 @@ function doβchallenge() {
 }
 
 function breakBouncfinity() {
-    if (βP >= 1000000 && βPchallenges = ["F", "F", "F"]) {
+    if (βP >= 1000000 && βPchallenges[0] = "F" && βPchallenges[1] = "F" && βPchallenges[2] = "F") {
         maxBalls = 12;
         breakBouncfinity = true;
     }
