@@ -16,6 +16,7 @@ let brokenBouncfinity = false;
 let davenBalls = [];
 let davenBallCost = 100;
 let achievements = [false, false, false, false, false, false, false, false, false, false, false, 0];
+const numberOfAchievements = 11;
 const maxDavenBalls = 10;
 const sizeMap = {
     "XS": "25px",
@@ -148,12 +149,16 @@ function upgradeBallColor() {
         ball[0] = newColor;
         if (newColor == "yellow" && !achievements[0]) {
             achievements[0] = true;
-        } else if  (newColor == "blue" && !achievements[2]) {
+            achievements[numberOfAchievements]++;
+        } else if (newColor == "blue" && !achievements[2]) {
             achievements[2] = true;
-        } else if  (newColor == "white" && !achievements[3]) {
+            achievements[numberOfAchievements]++;
+        } else if (newColor == "white" && !achievements[3]) {
             achievements[3] = true;
-        } else if  (newColor == "black" && !achievements[4]) {
+            achievements[numberOfAchievements]++;
+        } else if (newColor == "black" && !achievements[4]) {
            achievements[4] = true;
+           achievements[numberOfAchievements]++;
         }
         ball[2] = ball[2] * multiplier;
         document.getElementById("bounces").innerText = bounces;
@@ -204,6 +209,16 @@ function upgradeBallSize() {
         bounces -= upgradeCost;
         ball[1] = newSize;
         ball[2] = ball[2] * multiplier;
+        if (newSize == "L" && !achievements[6]) {
+            achievements[6] = true;
+            achievements[numberOfAchievements]++;
+        } else if (newSize == "L" && !achievements[7]) {
+            achievements[7] = true;
+            achievements[numberOfAchievements]++;
+        } else if (newSize == "3XL" && !achievements[8]) {
+            achievements[8] = true;
+            achievements[numberOfAchievements]++;
+        }
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
         renderBalls();
@@ -229,6 +244,9 @@ function checkForBouncfinity() {
         } else if (βPchallenges[2] == "IP") {
             βPchallenges[2] = "F";
         }
+        if (!achievements[10]) {
+            achievements[10] = true;
+        }
     } else if (bounces >= 2 ** 37 && brokenBouncfinity) {
         numberOfBouncfinities++;
         let x = Math.floor(Math.log2(bounces) - 37);
@@ -248,6 +266,9 @@ function checkForBouncfinity() {
             βPchallenges[1] = "F";
         } else if (βPchallenges[2] == "IP") {
             βPchallenges[2] = "F";
+        }
+        if (!achievements[10]) {
+            achievements[10] = true;
         }
     }
     updateUI();

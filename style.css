@@ -194,3 +194,13 @@ body {
     background-position: center;
     border-radius: 50%;
 }
+
+.shinydaven-ball {
+    width: 55px !important;
+    height: 55px !important;
+    background-color: transparent !important;
+    background-image: url('shinydaven.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
