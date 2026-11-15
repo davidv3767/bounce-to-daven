@@ -28,6 +28,7 @@ function addBounces() {
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
+    saveGame();
 }
 
 function addBall() {
@@ -39,6 +40,7 @@ function addBall() {
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
     renderBalls();
+    saveGame();
 }
 
 function loadGame() {
@@ -77,7 +79,7 @@ function updateUI() {
     const bouncesEl = document.getElementById("bounces");
     const ballsEl = document.getElementById("balls");
     const bouncfinitiesEl = document.getElementById("bouncfinities");
-    const betaPEl = document.getElementById("βp");
+    const betaPEl = document.getElementById("βp");0
     if (bouncesEl) bouncesEl.innerText = bounces;
     if (ballsEl) ballsEl.innerText = balls.length;
     if (bouncfinitiesEl) bouncfinitiesEl.innerText = numberOfBouncfinities;
@@ -133,6 +135,7 @@ function upgradeBallColor() {
         document.getElementById("balls").innerText = balls.length;
         renderBalls();
     }
+    saveGame();
 }
 
 function upgradeBallSize() {
@@ -180,6 +183,7 @@ function upgradeBallSize() {
         document.getElementById("balls").innerText = balls.length;
         renderBalls();
     }
+    saveGame();
 }
 
 function checkForBouncfinity() {
@@ -192,6 +196,7 @@ function checkForBouncfinity() {
         document.getElementById("balls").innerText = balls.length;
         βP += βPperβ
     }
+    saveGame();
 }
 
 function βPupgrade(upgradeNum) {
@@ -205,6 +210,7 @@ function βPupgrade(upgradeNum) {
         βPperβ += 1;
         βPupgradecost[2] = (βPupgradecost[2] * 3) - 1;
     }
+    saveGame();
 }
 
 function renderBalls() {
@@ -233,8 +239,11 @@ function doβchallenge() {
         βPchallenge3 = true;
         βPchallenges[2] = "IP";
     }
+    saveGame();
 }
 
 addBounces();
+loadGame();
+updateUI();
 renderBalls();
 setInterval(addBounces, 1000 * βPchallenge1);
