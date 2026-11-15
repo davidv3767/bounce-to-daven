@@ -32,9 +32,9 @@ const davenImageMap = {
     "bronze": "bronzedaven.png",
     "silver": "silverdaven.png",
     "gold": "goldendaven.png",
+    "cosmic": "cosmicdaven.png",
     "shiny": "shinydaven.png",
     "royal": "royaldaven.png",
-    "cosmic": "cosmicdaven.png"
 };
 const container = document.getElementById("ball-display");
 
@@ -375,6 +375,50 @@ function buyDavenBall() {
         updateUI();
         renderDavenBalls();
         saveGame();
+    }
+}
+
+function upgradeDavenRank() {
+    let input = prompt(`Enter ball number to upgrade color (1 to ${davenBalls.length}):`);
+    if (input === null) return;
+    let ballNum = parseInt(input) - 1;
+    if (isNaN(ballNum) || ballNum < 0 || ballNum >= davenBalls.length) {
+        alert("Invalid ball number!");
+        return;
+    }
+    let upgradeCost;
+    let multipler;
+    let newRank;
+    let daven = davenBalls[ballNum];
+    if (daven[0] == "normal") {
+        upgradeCost = 250;
+        multipler = 100;
+        newRank = "bronze";
+    } else  if (daven[0] == "bronze") {
+        upgradeCost = 100000;
+        multipler = 100;
+        newRank = "silver";
+    } else if (daven[0] == "silver") {
+        upgradeCost = 25000000;
+        multipler = 10;
+        newRank = "gold";
+    } else if (daven[0] == "gold") {
+        upgradeCost = 500000000;
+        multipler = 100;
+        newRank = "cosmic";
+    } else if (daven[0] == "cosmic") {
+        upgradeCost = 10000000000;
+        multipler = 10;
+        newRank = "shiny";
+    } else if (daven[0] == "shiny") {
+        upgradeCost = 250000000000;
+        multipler = 10;
+        newRank = "royal";
+    }
+    if (βP >= upgradeCost) {
+        βP -= upgradeCost;
+        daven[0] = newRank;
+        daven[1] = daven[1] * multipler;
     }
 }
 
