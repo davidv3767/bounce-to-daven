@@ -135,11 +135,21 @@ body {
     color: #009D94;
 }
 
-.daven-ball {
+.normaldaven-ball {
     width: 55px !important;
     height: 55px !important;
     background-color: transparent !important;
     background-image: url('normaldaven.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.bronzedaven-ball {
+    width: 55px !important;
+    height: 55px !important;
+    background-color: transparent !important;
+    background-image: url('bronzedaven.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
