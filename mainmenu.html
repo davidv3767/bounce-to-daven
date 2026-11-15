@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="royaldaven.png">
+    <title>Bounce to Daven</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="mainmenu.html">Bouncing Area</a></li>
+            <li><a href="bouncfinity.html">Bouncfinity to Prestige</a></li>
+            <li><a href="davenness.html">Daven's Haven</a></li>
+            <li><a href="stats.html">Bounces for Nerds</a></li>
+            <li><a href="music.html">Bouncy Music</a></li>
+        </ul>
+    </nav>
+    <h2>Bounces: <span id="bounces">-</span></h2>
+    <h2># of Balls: <span id="balls">-</span></h2>
+    <ul class="ball-animation" id="ball-display">
+    </ul>
+    <div class="btn-container">
+        <a class="btn" onclick="addBall()">Buy a Ball</a>
+    </div>
+    <div class="btn-container">
+        <a class="btn" onclick="upgradeBallColor()">Upgrade Color</a>
+    </div>
+    <div class="btn-container">
+        <a class="btn" onclick="upgradeBallSize()">Upgrade Size</a>
+    </div>
+    <div class="btn-container">
+        <a class="btn" onclick="checkForBouncfinity()">Bouncfinate</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

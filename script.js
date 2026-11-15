@@ -15,8 +15,8 @@ let maxBalls = 10;
 let brokenBouncfinity = false;
 let davenBalls = [];
 let davenBallCost = 100;
-let achievements = [false, false, false, false, false, false, false, false, false, false, false, 0];
-const numberOfAchievements = 11;
+let achievements = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 0];
+const numberOfAchievements = 27;
 const maxDavenBalls = 10;
 const sizeMap = {
     "XS": "25px",
@@ -274,10 +274,16 @@ function checkForBouncfinity() {
         βP += βPperβ;
         if (βPchallenges[0] == "IP") {
             βPchallenges[0] = "F";
+            achievements[17] = true;
+            achievements[numberOfAchievements]++;
         } else if (βPchallenges[1] == "IP") {
             βPchallenges[1] = "F";
+            achievements[18] = true;
+            achievements[numberOfAchievements]++;
         } else if (βPchallenges[2] == "IP") {
             βPchallenges[2] = "F";
+            achievements[19] = true;
+            achievements[numberOfAchievements]++;
         }
         if (!achievements[10]) {
             achievements[10] = true;
@@ -297,14 +303,44 @@ function checkForBouncfinity() {
         βP += (βPperβ * (2**x));
         if (βPchallenges[0] == "IP") {
             βPchallenges[0] = "F";
+            achievements[17] = true;
+            achievements[numberOfAchievements]++;
         } else if (βPchallenges[1] == "IP") {
             βPchallenges[1] = "F";
+            achievements[18] = true;
+            achievements[numberOfAchievements]++;
         } else if (βPchallenges[2] == "IP") {
             βPchallenges[2] = "F";
+            achievements[19] = true;
+            achievements[numberOfAchievements]++;
         }
         if (!achievements[10]) {
             achievements[10] = true;
         }
+    }
+    if (βP >= 10 && !achievements[11]) {
+        achievements[11] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (βP >= 100 && !achievements[13]) {
+        achievements[13] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (βP >= 1000 && !achievements[15]) {
+        achievements[15] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (numberOfBouncfinities >= 10 && !achievements[12]) {
+        achievements[12] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (numberOfBouncfinities >= 100 && !achievements[14]) {
+        achievements[14] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (numberOfBouncfinities >= 1000 && !achievements[16]) {
+        achievements[16] = true;
+        achievements[numberOfAchievements]++;
     }
     updateUI();
     saveGame();
@@ -370,6 +406,18 @@ function buyDavenBall() {
         βP -= davenBallCost;
         davenBalls.push(newDavenBall); 
         davenBallCost = Math.floor(davenBallCost * 2.5);
+        if (davenBalls.length >= 1 && !achievements[20]) {
+            achievements[20] = true;
+            achievements[numberOfAchievements]++;
+        }
+        if (davenBalls.length >= 5 && !achievements[21]) {
+            achievements[21] = true;
+            achievements[numberOfAchievements]++;
+        }
+        if (davenBalls.length >= 10 && !achievements[22]) {
+            achievements[22] = true;
+            achievements[numberOfAchievements]++;
+        }
         updateUI();
         renderDavenBalls();
         saveGame();
@@ -417,6 +465,18 @@ function upgradeDavenRank() {
         βP -= upgradeCost;
         daven[0] = newRank;
         daven[1] = daven[1] * multipler;
+        if (newSize == "gold" && !achievements[23]) {
+            achievements[23] = true;
+            achievements[numberOfAchievements]++;
+        }
+        if (newSize == "shiny" && !achievements[24]) {
+            achievements[24] = true;
+            achievements[numberOfAchievements]++;
+        }
+        if (newSize == "royal" && !achievements[25]) {
+            achievements[25] = true;
+            achievements[numberOfAchievements]++;
+        }
         updateUI();
         renderDavenBalls();
         saveGame();
@@ -443,40 +503,16 @@ function renderDavenBalls() {
 }
 
 function updateAchievements() {
-    if (achievements[0]) {
-        document.getElementById("achievement1").innerText = "✓";
+    for (let i = 0; i < numberOfAchievements; i++) {
+        const el = document.getElementById(`achievement${i + 1}`);
+        if (el && achievements[i]) {
+            el.innerText = "✓";
+        }
     }
-    if (achievements[1]) {
-        document.getElementById("achievement2").innerText = "✓";
+    const doneEl = document.getElementById("achievementsDone");
+    if (doneEl) {
+        doneEl.innerText = achievements[numberOfAchievements];
     }
-    if (achievements[2]) {
-        document.getElementById("achievement3").innerText = "✓";
-    }
-    if (achievements[3]) {
-        document.getElementById("achievement4").innerText = "✓";
-    }
-    if (achievements[4]) {
-        document.getElementById("achievement5").innerText = "✓";
-    }
-    if (achievements[5]) {
-        document.getElementById("achievement6").innerText = "✓";
-    }
-    if (achievements[6]) {
-        document.getElementById("achievement7").innerText = "✓";
-    }
-    if (achievements[7]) {
-        document.getElementById("achievement8").innerText = "✓";
-    }
-    if (achievements[8]) {
-        document.getElementById("achievement9").innerText = "✓";
-    }
-    if (achievements[9]) {
-        document.getElementById("achievement10").innerText = "✓";
-    }
-    if (achievements[10]) {
-        document.getElementById("achievement11").innerText = "✓";
-    }
-    document.getElementById("achievementsDone").innerText = achievements[numberOfAchievements]
     updateUI();
     renderBalls();
     saveGame();
