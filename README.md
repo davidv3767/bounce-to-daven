@@ -15,7 +15,7 @@ On the bouncfinity (1st prestige) tab, you can use your βP to increase bounce g
 After all 3 challenges are beat, BOUNCFINITY IS BROKEN! You can gain more bouncfinities and more βP by waiting past 137.44 billion to bouncificate! This will fuel you towards the next sub-prestige level.
 
 ### 4. Daven Balls
-Welcome the Daven bouncy balls! Inspired by the Haven mascot, there are 7 Daven ball types (normal, bronze, silver, gold, cosmic, shiny, royalty) bought with βP that passively generate more βP for you!
+Welcome the Daven bouncy balls! Inspired by the Haven mascot, there are 7 Daven ball types (normal, bronze, silver, gold, cosmic, shiny, royalty, & emperor) bought with βP that passively generate more βP for you!
 
 ## In The Future
 We have thoughts about continuing this project on Coral (coral.hackclub.com) where we add more content & maybe try to build an AI to speedrun our game!
