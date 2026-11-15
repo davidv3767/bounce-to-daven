@@ -236,13 +236,16 @@ function checkForBouncfinity() {
 }
 
 function βPupgrade(upgradeNum) {
-    if (upgradeNum == 0 && βPupgradecost[0] <= βP) {
+    if (upgradeNum == 0 && βPupgradecost[0] <= βp) {
+        βp -= βPupgradecost[0];
         βPbounceGain += 0.1;
         βPupgradecost[0] = (βPupgradecost[0] * 3) - 1;
-    } else if (upgradeNum == 1 && βPupgradecost[1] <= βP) {
+    } else if (upgradeNum == 1 && βPupgradecost[1] <= βp) {
+        βp -= βPupgradecost[1];
         βPbounceSpeed += 0.1;
         βPupgradecost[1] = (βPupgradecost[1] * 3) - 1;
-    } else if (upgradeNum == 2 && βPupgradecost[2] <= βP) {
+    } else if (upgradeNum == 2 && βPupgradecost[2] <= βp) {
+        βp -= βPupgradecost[2];
         βPperβ += 1;
         βPupgradecost[2] = (βPupgradecost[2] * 3) - 1;
     }
