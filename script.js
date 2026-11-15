@@ -524,7 +524,6 @@ function updateAchievements() {
         doneEl.innerText = achievements[numberOfAchievements];
     }
     updateUI();
-    renderBalls();
 }
 
 function resetProgress() {
