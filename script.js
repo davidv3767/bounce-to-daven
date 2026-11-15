@@ -432,6 +432,8 @@ function passiveβP() {
     if (allRoyals && davenBalls.length >= 10 && !achievements[26]) {
         achievements[26] = true;
     }
+    updateUI();
+    saveGame();
 }
 
 function upgradeDavenRank() {
@@ -523,7 +525,6 @@ function updateAchievements() {
     }
     updateUI();
     renderBalls();
-    saveGame();
 }
 
 function resetProgress() {
@@ -532,24 +533,7 @@ function resetProgress() {
         alert('Progress is Reset!');
         button.textContent = "Clicked!";
     });
-    bounces = 0;
-    newBallCost = 10;
-    balls = [["red", "XS", 1]];
-    numberOfBouncfinities = 0;
-    βP = 0;
-    βPperβ = 1;
-    βPupgradecost = [1, 3, 5];
-    βPbounceGain = 1;
-    βPbounceSpeed = 1;
-    βPchallenges = ["NS", "NS", "NS"]
-    βPchallenge1 = 1;
-    βPchallenge2 = false;
-    βPchallenge3 = false;
-    maxBalls = 10;
-    brokenBouncfinity = false;
-    davenBalls = [];
-    davenBallCost = 100;
-    achievements = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 0];
+    localStorage.clear();
 }
 
 loadGame();
