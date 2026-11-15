@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: flex-start;
-    background-color: #b5651d;
+    background-color: #d7af8d;
     gap: 10px;
     font-family: "Times New Roman", Times, serif;
 }
@@ -150,6 +150,16 @@ body {
     height: 55px !important;
     background-color: transparent !important;
     background-image: url('bronzedaven.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.silverdaven-ball {
+    width: 55px !important;
+    height: 55px !important;
+    background-color: transparent !important;
+    background-image: url('silverdaven.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
