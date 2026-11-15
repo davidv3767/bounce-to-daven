@@ -531,13 +531,13 @@ function updateAchievements() {
 }
 
 function resetProgress() {
-    localStorage.clear();
-    location.reload()
     const button = document.getElementById('myButton');
     button.addEventListener('click', function() {
         alert('Progress is Reset!');
         button.textContent = "Clicked!";
     });
+    localStorage.clear();
+    location.reload();
 }
 
 loadGame();
