@@ -367,14 +367,34 @@ function breakBouncfinity() {
 }
 
 function buyDavenBall() {
+    let newDavenBall = ["normal", 1];
     if (βP >= davenBallCost && davenBalls.length < maxDavenBalls) {
         βP -= davenBallCost;
-        davenBalls.push({"normal", 1}); 
+        davenBalls.push(newDavenBall); 
         davenBallCost = Math.floor(davenBallCost * 2.5);
         updateUI();
         renderDavenBalls();
         saveGame();
     }
+}
+
+function renderDavenBalls() {
+    const container = document.getElementById("daven-ball-display");
+    const countEl = document.getElementById("daven-balls");
+    if (countEl) countEl.innerText = davenBalls.length;
+    if (!container) return;
+    container.innerHTML = "";
+    davenBalls.forEach((daven, index) => {
+        const li = document.createElement("li");
+        li.style.backgroundImage = `url('${davenImageMap[daven.rank]}')`;
+        li.style.backgroundSize = "cover";
+        li.style.backgroundPosition = "center";
+        li.style.width = "50px";
+        li.style.height = "50px";
+        li.style.borderRadius = "50%";
+        li.style.animationDelay = `${index * 0.2}s`;
+        container.appendChild(li);
+    });
 }
 
 function updateAchievements() {
@@ -421,29 +441,10 @@ function resetProgress() {
     let input = prompt(`Enter "I understand" if you agree to reset your progress:`);
     if (input == "I understand") {
         localStorage.clear();
-        loadGame();
+        location.reload()
     } else {
         return;
     }
-}
-
-function renderDavenBalls() {
-    const container = document.getElementById("daven-ball-display");
-    const countEl = document.getElementById("daven-balls");
-    if (countEl) countEl.innerText = davenBalls.length;
-    if (!container) return;
-    container.innerHTML = "";
-    davenBalls.forEach((daven, index) => {
-        const li = document.createElement("li");
-        li.style.backgroundImage = `url('${davenImageMap[daven.rank]}')`;
-        li.style.backgroundSize = "cover";
-        li.style.backgroundPosition = "center";
-        li.style.width = "50px";
-        li.style.height = "50px";
-        li.style.borderRadius = "50%";
-        li.style.animationDelay = `${index * 0.2}s`;
-        container.appendChild(li);
-    });
 }
 
 loadGame();
