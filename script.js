@@ -50,23 +50,22 @@ function addBounces() {
             all3XLs = false;
         }
     }
-    if (balls.length >= 10) {
+    if (balls.length >= 10 && !achievements[1]) {
         achievements[1] = true;
         achievements[numberOfAchievements]++;
     }
-    if (allBlack && balls.length >= 10) {
+    if (allBlack && balls.length >= 10 && !achievements[5]) {
         achievements[5] = true;
         achievements[numberOfAchievements]++;
     }
-    if (all3XLs && allBlack && balls.length >= 10) {
+    if (all3XLs && allBlack && balls.length >= 10 && !achievements[9]) {
         achievements[9] = true;
         achievements[numberOfAchievements]++;
     }
     if (βPchallenge3) {
         bounces = bounces * 0.995;
     }
-    document.getElementById("bounces").innerText = bounces;
-    document.getElementById("balls").innerText = balls.length;
+    updateUI();
     saveGame();
 }
 
@@ -76,8 +75,7 @@ function addBall() {
         balls.push(["red", "XS", 1]);
         newBallCost = Math.floor((newBallCost + 10) * 1.25);
     }
-    document.getElementById("bounces").innerText = bounces;
-    document.getElementById("balls").innerText = balls.length;
+    updateUI();
     renderBalls();
     saveGame();
 }
@@ -490,8 +488,6 @@ function upgradeDavenRank() {
             achievements[numberOfAchievements]++;
         }
         updateUI();
-        renderDavenBalls();
-        saveGame();
     }
 }
 
