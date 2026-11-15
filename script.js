@@ -31,8 +31,31 @@ const container = document.getElementById("ball-display");
 
 function addBounces() {
     let allBlack = true;
+    let all3XLs = true;
     for (let ball of balls) {
         bounces += Math.floor(ball[2] * βPbounceGain);
+        if (ball[0] == "black" && allBlack) {
+            allBlack = true;
+        } else {
+            allBlack = false;
+        }
+        if (ball[1] == "3XL" && all3XLs) {
+            all3XLs = true;
+        } else {
+            all3XLs = false;
+        }
+    }
+    if (balls.length >= 10) {
+        achievements[1] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (allBlack && balls.length >= 10) {
+        achievements[5] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (all3XLs && allBlack && balls.length >= 10) {
+        achievements[9] = true;
+        achievements[numberOfAchievements]++;
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
@@ -91,6 +114,7 @@ function saveGame() {
     localStorage.setItem('davenBalls', JSON.stringify(davenBalls));
     localStorage.setItem('maxDavenBalls', maxDavenBalls);
     localStorage.setItem('achievements', JSON.stringify(achievements));
+    updateAchievements();
 }
 
 function updateUI() {
