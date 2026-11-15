@@ -483,13 +483,13 @@ function updateAchievements() {
 }
 
 function resetProgress() {
-    let input = prompt(`Enter "I understand" if you agree to reset your progress:`);
-    if (input == "I understand") {
-        localStorage.clear();
-        location.reload()
-    } else {
-        return;
-    }
+    localStorage.clear();
+    location.reload()
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', function() {
+        alert('Progress is Reset!');
+        button.textContent = "Clicked!";
+    });
 }
 
 loadGame();
