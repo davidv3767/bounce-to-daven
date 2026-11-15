@@ -27,6 +27,15 @@ const sizeMap = {
     "2XL": "64px",
     "3XL": "72px"
 };
+const davenImageMap = {
+    "normal": "normaldaven.png",
+    "bronze": "bronzedaven.png",
+    "silver": "silverdaven.png",
+    "gold": "goldendaven.png",
+    "shiny": "shinydaven.png",
+    "royal": "royaldaven.png",
+    "cosmic": "cosmicdaven.png"
+};
 const container = document.getElementById("ball-display");
 
 function addBounces() {
@@ -112,6 +121,7 @@ function saveGame() {
     localStorage.setItem('maxBalls', maxBalls);
     localStorage.setItem('brokenBouncfinity', JSON.stringify(brokenBouncfinity));
     localStorage.setItem('davenBalls', JSON.stringify(davenBalls));
+    localStorage.setItem('davenBallCost', JSON.stringify(davenBallCost));
     localStorage.setItem('maxDavenBalls', maxDavenBalls);
     localStorage.setItem('achievements', JSON.stringify(achievements));
     updateAchievements();
@@ -357,9 +367,9 @@ function breakBouncfinity() {
 }
 
 function buyDavenBall() {
-    if (βP >= davenBallCost && davenBalls < maxDavenBalls) {
+    if (βP >= davenBallCost && davenBalls.length < maxDavenBalls) {
         βP -= davenBallCost;
-        davenBalls++;
+        davenBalls.push({"normal", 1}); 
         davenBallCost = Math.floor(davenBallCost * 2.5);
         updateUI();
         renderDavenBalls();
@@ -411,14 +421,34 @@ function resetProgress() {
     let input = prompt(`Enter "I understand" if you agree to reset your progress:`);
     if (input == "I understand") {
         localStorage.clear();
-        location.reload();
+        loadGame();
     } else {
         return;
     }
 }
 
+function renderDavenBalls() {
+    const container = document.getElementById("daven-ball-display");
+    const countEl = document.getElementById("daven-balls");
+    if (countEl) countEl.innerText = davenBalls.length;
+    if (!container) return;
+    container.innerHTML = "";
+    davenBalls.forEach((daven, index) => {
+        const li = document.createElement("li");
+        li.style.backgroundImage = `url('${davenImageMap[daven.rank]}')`;
+        li.style.backgroundSize = "cover";
+        li.style.backgroundPosition = "center";
+        li.style.width = "50px";
+        li.style.height = "50px";
+        li.style.borderRadius = "50%";
+        li.style.animationDelay = `${index * 0.2}s`;
+        container.appendChild(li);
+    });
+}
+
 loadGame();
 updateUI();
 renderBalls();
+renderDavenBalls();
 addBounces();
 setInterval(addBounces, 1000 * βPchallenge1 / βPbounceSpeed);
