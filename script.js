@@ -11,6 +11,8 @@ let βPchallenges = ["NS", "NS", "NS"]
 let βPchallenge1 = 1;
 let βPchallenge2 = false;
 let βPchallenge3 = false;
+let maxBalls = 10;
+let brokenBouncfinity = false;
 const sizeMap = {
     "XS": "25px",
     "S": "32px",
@@ -28,12 +30,11 @@ function addBounces() {
     }
     document.getElementById("bounces").innerText = bounces;
     document.getElementById("balls").innerText = balls.length;
-    checkForBouncfinity();
     saveGame();
 }
 
 function addBall() {
-    if (newBallCost <= bounces && balls.length < 10) {
+    if (newBallCost <= bounces && balls.length < maxBalls) {
         bounces -= newBallCost;
         balls.push(["red", "XS", 1]);
         newBallCost = Math.floor((newBallCost + 10) * 1.25);
@@ -188,7 +189,7 @@ function upgradeBallSize() {
 }
 
 function checkForBouncfinity() {
-    if (bounces >= 2 ** 37) {
+    if (bounces >= 2 ** 37 && !brokenBouncfinity) {
         numberOfBouncfinities++;
         bounces = 0;
         balls = [["red", "XS", 1]];
@@ -196,6 +197,18 @@ function checkForBouncfinity() {
         document.getElementById("bounces").innerText = bounces;
         document.getElementById("balls").innerText = balls.length;
         βP += βPperβ
+    } else if (bounces >= 2 ** 37 && brokenBouncfinity) {
+        numberOfBouncfinities++;
+        let x = Math.floor(Math.log2(bounces) - 37);
+        if (x < 0) {
+            x = 0;
+        }
+        bounces = 0;
+        balls = [["red", "XS", 1]];
+        newBallCost = 10;
+        document.getElementById("bounces").innerText = bounces;
+        document.getElementById("balls").innerText = balls.length;
+        βP += (βPperβ * (2**x))
     }
     saveGame();
 }
@@ -242,6 +255,13 @@ function doβchallenge() {
         βPchallenges[2] = "IP";
     }
     saveGame();
+}
+
+function breakBouncfinity() {
+    if (βP >= 1000000) {
+        maxBalls = 12;
+        breakBouncfinity = true;
+    }
 }
 
 loadGame();
