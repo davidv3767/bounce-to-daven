@@ -121,7 +121,6 @@ function saveGame() {
     localStorage.setItem('davenBallCost', JSON.stringify(davenBallCost));
     localStorage.setItem('maxDavenBalls', maxDavenBalls);
     localStorage.setItem('achievements', JSON.stringify(achievements));
-    updateAchievements();
 }
 
 function updateUI() {
@@ -527,12 +526,9 @@ function updateAchievements() {
 }
 
 function resetProgress() {
-    const button = document.getElementById('myButton');
-    button.addEventListener('click', function() {
-        alert('Progress is Reset!');
-        button.textContent = "Clicked!";
-    });
     localStorage.clear();
+    alert('Progress is Reset!');
+    location.reload();
 }
 
 loadGame();
