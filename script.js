@@ -59,6 +59,8 @@ function loadGame() {
     if (localStorage.getItem('βPchallenge1') !== null) βPchallenge1 = parseInt(localStorage.getItem('βPchallenge1'));
     if (localStorage.getItem('βPchallenge2') !== null) βPchallenge2 = JSON.parse(localStorage.getItem('βPchallenge2'));
     if (localStorage.getItem('βPchallenge3') !== null) βPchallenge3 = JSON.parse(localStorage.getItem('βPchallenge3'));
+    if (localStorage.getItem('maxBalls') !== null) maxBalls = parseInt(localStorage.getItem('maxBalls'));
+    if (localStorage.getItem('brokenBouncfinity') !== null) brokenBouncfinity = JSON.parse(localStorage.getItem('brokenBouncfinity'));
 }
 
 function saveGame() {
@@ -75,6 +77,8 @@ function saveGame() {
     localStorage.setItem('βPchallenge1', βPchallenge1);
     localStorage.setItem('βPchallenge2', βPchallenge2);
     localStorage.setItem('βPchallenge3', βPchallenge3);
+    localStorage.setItem('maxBalls', maxBalls);
+    localStorage.setItem('brokenBouncfinity', JSON.stringify(brokenBouncfinity));
 }
 
 function updateUI() {
@@ -210,6 +214,7 @@ function checkForBouncfinity() {
         document.getElementById("balls").innerText = balls.length;
         βP += (βPperβ * (2**x))
     }
+    updateUI();
     saveGame();
 }
 
