@@ -82,7 +82,7 @@ function upgradeBallColor() {
         multiplier = 20;
         newColor = "black";
     }
-    if (ball[0] != "black" && bounces >= upgradeCost) {
+    if (ball[0] != "black" && bounces >= upgradeCost && (!βPchallenge2 || !(ball[0] == "purple" || ball[0] == "white"))) {
         bounces -= upgradeCost;
         ball[0] = newColor;
         ball[2] = ball[2] * multiplier;
@@ -128,8 +128,8 @@ function upgradeBallSize() {
         upgradeCost = 24300000;
         multiplier = 5;
         newSize = "3XL";
-    }
-    if (ball[1] != "3XL" && bounces >= upgradeCost) {
+    } 
+    if (ball[1] != "3XL" && bounces >= upgradeCost && (!βPchallenge2 || !(ball[1] == "2XL"))) {
         bounces -= upgradeCost;
         ball[1] = newSize;
         ball[2] = ball[2] * multiplier;
