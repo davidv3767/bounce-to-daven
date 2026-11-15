@@ -8,7 +8,7 @@ body {
     text-align: flex-start;
     background-color: #97d6f1;
     gap: 10px;
-    font-family: "Times Roman", Times, serif;
+    font-family: "Pixelify Sans", sans-serif;
 }
 
 
@@ -22,7 +22,7 @@ body {
     display: inline-block;
     background-color: #b8d455;
     color: #4a4d54;
-    font-family: sans-serif;
+    font-family: DotGothic16, sans-senif;
     font-size: 1.1em;
     font-weight: bold;
     padding: 12px 30px;
