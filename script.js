@@ -13,6 +13,9 @@ let βPchallenge2 = false;
 let βPchallenge3 = false;
 let maxBalls = 10;
 let brokenBouncfinity = false;
+let davenBalls = [];
+let davenBallCost = 100;
+const maxDavenBalls = 10;
 const sizeMap = {
     "XS": "25px",
     "S": "32px",
@@ -61,6 +64,8 @@ function loadGame() {
     if (localStorage.getItem('βPchallenge3') !== null) βPchallenge3 = JSON.parse(localStorage.getItem('βPchallenge3'));
     if (localStorage.getItem('maxBalls') !== null) maxBalls = parseInt(localStorage.getItem('maxBalls'));
     if (localStorage.getItem('brokenBouncfinity') !== null) brokenBouncfinity = JSON.parse(localStorage.getItem('brokenBouncfinity'));
+    if (localStorage.getItem('davenBalls') !== null) davenBalls = JSON.parse(localStorage.getItem('davenBalls'));
+    if (localStorage.getItem('davenBallCost') !== null) davenBallCost = parseInt(localStorage.getItem('davenBallCost'));
 }
 
 function saveGame() {
@@ -79,6 +84,8 @@ function saveGame() {
     localStorage.setItem('βPchallenge3', βPchallenge3);
     localStorage.setItem('maxBalls', maxBalls);
     localStorage.setItem('brokenBouncfinity', JSON.stringify(brokenBouncfinity));
+    localStorage.setItem('davenBalls', JSON.stringify(davenBalls));
+    localStorage.setItem('maxDavenBalls', maxDavenBalls);
 }
 
 function updateUI() {
@@ -289,6 +296,17 @@ function breakBouncfinity() {
         brokenBouncfinity = true;
     }
     renderBalls();
+}
+
+function buyDavenBall() {
+    if (βP >= davenBallCost && davenBalls < maxDavenBalls) {
+        βP -= davenBallCost;
+        davenBalls++;
+        davenBallCost = Math.floor(davenBallCost * 2.5);
+        updateUI();
+        renderDavenBalls();
+        saveGame();
+    }
 }
 
 loadGame();
