@@ -280,9 +280,9 @@ function doβchallenge() {
 }
 
 function breakBouncfinity() {
-    if (βP >= 1000000 && βPchallenges[0] = "F" && βPchallenges[1] = "F" && βPchallenges[2] = "F") {
+    if (βP >= 1000000 && βPchallenges[0] === "F" && βPchallenges[1] === "F" && βPchallenges[2] === "F") {
         maxBalls = 12;
-        breakBouncfinity = true;
+        brokenBouncfinity = true;
     }
     renderBalls();
 }
