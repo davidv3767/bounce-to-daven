@@ -11,10 +11,12 @@ body {
     font-family: "Times Roman", Times, serif;
 }
 
+
 .btn-container {
     text-align: center;
     margin: 15px 0;
 }
+
 
 .btn {
     display: inline-block;
@@ -30,11 +32,13 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+
 .btn:hover {
     background-color: #42ce1b;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
+
 
 .ball-animation {
     display: flex;
@@ -43,6 +47,7 @@ body {
     padding: 0;
     margin: 110px 0 15px 0;
 }
+
 
 .ball-animation li {
     width: 40px;
@@ -54,6 +59,7 @@ body {
     box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.3);
     animation: bouncing 1s linear infinite alternate-reverse;
 }
+
 
 @keyframes bouncing {
     0% {
@@ -67,41 +73,51 @@ body {
     }
 }
 
+
 .ball-animation li:nth-child(2) {
     animation-delay: 0.2s;
 }
+
 
 .ball-animation li:nth-child(3) {
     animation-delay: 0.4s;
 }
 
+
 .ball-animation li:nth-child(4) {
     animation-delay: 0.6s;
 }
+
 
 .ball-animation li:nth-child(5) {
     animation-delay: 0.8s;
 }
 
+
 .ball-animation li:nth-child(6) {
     animation-delay: 0.0s;
 }
+
 
 .ball-animation li:nth-child(7) {
     animation-delay: 0.2s;
 }
 
+
 .ball-animation li:nth-child(8) {
     animation-delay: 0.4s;
 }
+
 
 .ball-animation li:nth-child(9) {
     animation-delay: 0.6s;
 }
 
+
 .ball-animation li:nth-child(10) {
     animation-delay: 0.8s;
 }
+
 
 .menu {
     margin-top: 0;
@@ -112,15 +128,18 @@ body {
     margin-bottom: 20px;
 }
 
+
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
+
 .menu li {
     float: left;
 }
+
 
 .menu li a {
     display: block;
@@ -131,10 +150,12 @@ body {
     font-weight: bold;
 }
 
+
 .menu li a:hover {
     background-color: #2da9d3;
     color: rgb(178, 247, 249);
 }
+
 
 .normaldaven-ball {
     width: 55px !important;
@@ -146,6 +167,7 @@ body {
     border-radius: 50%;
 }
 
+
 .bronzedaven-ball {
     width: 55px !important;
     height: 55px !important;
@@ -155,6 +177,7 @@ body {
     background-position: center;
     border-radius: 50%;
 }
+
 
 .silverdaven-ball {
     width: 55px !important;
@@ -166,6 +189,7 @@ body {
     border-radius: 50%;
 }
 
+
 .goldendaven-ball {
     width: 55px !important;
     height: 55px !important;
@@ -176,6 +200,7 @@ body {
     border-radius: 50%;
 }
 
+
 .shinydaven-ball {
     width: 55px !important;
     height: 55px !important;
@@ -185,6 +210,7 @@ body {
     background-position: center;
     border-radius: 50%;
 }
+
 
 .royaldaven-ball {
     width: 55px !important;
