@@ -15,7 +15,7 @@ let maxBalls = 10;
 let brokenBouncfinity = false;
 let davenBalls = [];
 let davenBallCost = 100;
-let achievements = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 0];
+let achievements = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 0];
 const numberOfAchievements = 28;
 const maxDavenBalls = 10;
 const sizeMap = {
@@ -144,10 +144,6 @@ function updateUI() {
 function upgradeBallColor() {
     let input = prompt(`Enter ball number to upgrade color (1 to ${balls.length}):`);
     if (input === null) return;
-    if (input == "purely here for demo") {
-        βP += 1000;
-        return;
-    }
     let ballNum = parseInt(input) - 1;
     if (isNaN(ballNum) || ballNum < 0 || ballNum >= balls.length) {
         alert("Invalid ball number!");
@@ -432,14 +428,22 @@ function buyDavenBall() {
 
 function passiveβP() {
     let allRoyals = true;
+    let allEmperors = true;
     for (let daven of davenBalls) {
         βP += Math.floor(daven[1]);
         if (daven[0] !== "royal") {
             allRoyals = false;
         }
+        if (daven[0] !== "emperor") {
+            allEmperors = false;
+        }
     }
     if (allRoyals && davenBalls.length >= 10 && !achievements[26]) {
         achievements[26] = true;
+        achievements[numberOfAchievements]++;
+    }
+    if (allEmperors && davenBalls.length >= 10 && !achievements[28]) {
+        achievements[28] = true;
         achievements[numberOfAchievements]++;
     }
     updateUI();
