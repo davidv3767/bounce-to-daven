@@ -135,10 +135,14 @@ function updateUI() {
     const ballsEl = document.getElementById("balls");
     const bouncfinitiesEl = document.getElementById("bouncfinities");
     const betaPEl = document.getElementById("βp");
+    const newBallCostEl = document.getElementById("new-ball-cost)");
+    const davenBallCostEl = document.getElementById("daven-ball-cost");
     if (bouncesEl) bouncesEl.innerText = bounces;
     if (ballsEl) ballsEl.innerText = balls.length;
     if (bouncfinitiesEl) bouncfinitiesEl.innerText = numberOfBouncfinities;
     if (betaPEl) betaPEl.innerText = βP;
+    if (newBallCostEl) newBallCostEl.innerText = newBallCost;
+    if (davenBallCostEl) davenBallCostEl.innerText = davenBallCost;
 }
 
 function upgradeBallColor() {
