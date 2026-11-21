@@ -135,7 +135,7 @@ function updateUI() {
     const ballsEl = document.getElementById("balls");
     const bouncfinitiesEl = document.getElementById("bouncfinities");
     const betaPEl = document.getElementById("βp");
-    const newBallCostEl = document.getElementById("new-ball-cost)");
+    const newBallCostEl = document.getElementById("new-ball-cost");
     const davenBallCostEl = document.getElementById("daven-ball-cost");
     const upgradeCost0El = document.getElementById("upgrade-cost-0");
     const upgradeCost1El = document.getElementById("upgrade-cost-1");
