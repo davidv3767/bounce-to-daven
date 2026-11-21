@@ -137,12 +137,18 @@ function updateUI() {
     const betaPEl = document.getElementById("βp");
     const newBallCostEl = document.getElementById("new-ball-cost)");
     const davenBallCostEl = document.getElementById("daven-ball-cost");
+    const upgradeCost0El = document.getElementById("upgrade-cost-0");
+    const upgradeCost1El = document.getElementById("upgrade-cost-1");
+    const upgradeCost2El = document.getElementById("upgrade-cost-2");
     if (bouncesEl) bouncesEl.innerText = bounces;
     if (ballsEl) ballsEl.innerText = balls.length;
     if (bouncfinitiesEl) bouncfinitiesEl.innerText = numberOfBouncfinities;
     if (betaPEl) betaPEl.innerText = βP;
     if (newBallCostEl) newBallCostEl.innerText = newBallCost;
     if (davenBallCostEl) davenBallCostEl.innerText = davenBallCost;
+    if (upgradeCost0El) upgradeCost0El.innerText = βPupgradecost[0];
+    if (upgradeCost1El) upgradeCost1El.innerText = βPupgradecost[1];
+    if (upgradeCost2El) upgradeCost2El.innerText = βPupgradecost[2];
 }
 
 function upgradeBallColor() {
