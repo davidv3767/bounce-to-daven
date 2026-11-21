@@ -67,6 +67,7 @@ function addBounces() {
         bounces = bounces * 0.995;
     }
     updateUI();
+    updateAchievements();
     saveGame();
 }
 
@@ -439,6 +440,7 @@ function passiveβP() {
     }
     if (allRoyals && davenBalls.length >= 10 && !achievements[26]) {
         achievements[26] = true;
+        achievements[numberOfAchievements]++;
     }
     updateUI();
     saveGame();
