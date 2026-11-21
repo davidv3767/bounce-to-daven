@@ -1,6 +1,6 @@
-# Bounce to Daven - A Bouncy Ball Idle Game!
+# Davens' Idle - A Bouncy Ball Idle Game!
 
-## What is Bounce to Daven?
+## What is Davens' Idle?
 Created at Haven (haven.hackclub.com), this is an idle game where you gain bounces, upgrade your balls, & get the prestige levels!
 
 ## Stages
@@ -27,4 +27,4 @@ We have thoughts about continuing this project on Coral (coral.hackclub.com) whe
 Due to the limited amount of time spent on this project, there may be bugs we have not provided a solution to. If we plan to work on this in the future, all  known to us will be fixed! 
 
 ### Current Known Bugs:
-##### 1. Achievements don't sync properly
+#### None Know Of
